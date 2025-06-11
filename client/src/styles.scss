@@ -1,0 +1,31 @@
+// These must come first
+@use '@angular/material' as mat;
+@use '@angular/material/theming' as mat-theming;
+
+// Then include your custom themes
+@include mat.core();
+
+// Define your theme
+$primary: mat.define-palette(mat.$indigo-palette);
+$accent: mat.define-palette(mat.$pink-palette, A200, A100, A400);
+$warn: mat.define-palette(mat.$red-palette);
+
+$theme: mat.define-light-theme((
+  color: (
+    primary: $primary,
+    accent: $accent,
+    warn: $warn,
+  )
+));
+
+// Include theme styles for core and each component used in your app
+@include mat.all-component-themes($theme);
+
+// Your other global styles come AFTER all @use and @include statements
+html, body { 
+  height: 100%; 
+}
+body { 
+  margin: 0; 
+  font-family: Roboto, "Helvetica Neue", sans-serif; 
+}
