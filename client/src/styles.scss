@@ -23,7 +23,7 @@ $theme: mat.define-light-theme((
 
 // Your other global styles come AFTER all @use and @include statements
 html, body { 
-  height: 100%; 
+  margin: 0; padding: 0; 
 }
 body { 
   margin: 0; 
